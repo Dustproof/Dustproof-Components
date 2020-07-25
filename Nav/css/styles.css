@@ -1,0 +1,217 @@
+/* Color */
+/* Typography */
+@font-face {
+  font-family: 'Averta';
+  src: url("../fonts/Intelligent Design - Averta-black.otf");
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #10141D;
+}
+
+h1 {
+  font-family: "Averta", sans-serif;
+  font-size: 48px;
+  line-height: 56px;
+  margin: 0 0 16px;
+}
+
+h2 {
+  font-family: "Averta", sans-serif;
+  font-size: 32px;
+  line-height: 48px;
+  margin: 0 0 16px;
+}
+
+h3 {
+  font-family: "Averta", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0 0 16px;
+}
+
+h4 {
+  font-family: "Averta", sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0 0 16px;
+}
+
+p {
+  margin: 0 0 16px;
+  max-width: 560px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Nav */
+nav {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  position: fixed;
+  padding: 0 20px;
+  min-height: 64px;
+  background: #fff;
+}
+
+nav .container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.brand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #10141D;
+  position: relative;
+  font-weight: 600;
+}
+
+.nav-link::after {
+  content: '';
+  height: 2px;
+  width: 0;
+  background: #10141D;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  content: '';
+  width: calc(100% - 40px);
+}
+
+.nav-menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-menu-button {
+  display: none;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+  margin-right: 20px;
+  height: 48px;
+  width: 48px;
+  padding: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav-menu-button .icon-line {
+  width: 100%;
+  height: 2px;
+  background: #10141D;
+  border-radius: 2px;
+  margin-bottom: 6px;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.nav-menu-button .icon-line:last-of-type {
+  width: 50%;
+  margin-bottom: 0;
+}
+
+.nav-menu-button:hover .icon-line:last-of-type {
+  width: 100%;
+}
+
+.nav-menu-reverse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-menu-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .nav-menu-container {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    background: #333;
+  }
+  .nav-menu-reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  nav {
+    padding: 0 10px;
+  }
+  nav .container {
+    padding: 0 10px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
