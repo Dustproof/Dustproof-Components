@@ -8,14 +8,11 @@ $color-primary: #10141D;
 $font-heading: 'Averta', sans-serif;
 $font-body: 'Open Sans', sans-serif;
 
-@font-face {
-    font-family: 'Averta';
-    src: url("../fonts/Intelligent Design - Averta-black.otf");
-}
 
 body {
     font-family: $font-body;
     color: $color-primary;
+    background-color: #d5dadf;
 }
 
 h1 {
@@ -62,13 +59,14 @@ nav {
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
-    width: 100%;
     display: flex;
+    width: 100%;
     align-items: stretch;
     position: fixed;
     padding: 0 20px;
     min-height: 64px;
     background: #fff;
+    z-index: 999;
 }
 
 nav .container {
@@ -85,6 +83,7 @@ nav .container {
     height: 100%;
     align-items: center;
     margin-right: 20px;
+    min-height: 64px;
 }
 
 .nav-link {
@@ -96,6 +95,11 @@ nav .container {
     color: $color-primary;
     position: relative;
     font-weight: 600;
+    list-style: none;
+    min-height: 64px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 .nav-link::after {
@@ -118,9 +122,15 @@ nav .container {
 
 .nav-menu-container {
     display: flex;
+    padding-left: 0;
+    margin: 0;
 }
 
-.nav-menu-button {
+.nav-menu-container li {
+    list-style: none;
+}
+
+.burger {
     display: none;
     -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -133,7 +143,7 @@ nav .container {
     justify-content: center;
 }
 
-.nav-menu-button .icon-line {
+.burger div {
     width: 100%;
     height: 2px;
     background: $color-primary;
@@ -142,12 +152,12 @@ nav .container {
     transition: all 200ms;
 }
 
-.nav-menu-button .icon-line:last-of-type {
+.burger div:last-of-type {
     width: 50%;
     margin-bottom: 0;
 }
 
-.nav-menu-button:hover .icon-line:last-of-type {
+.burger:hover div:last-of-type {
     width: 100%;
 }
 
@@ -159,7 +169,7 @@ nav .container {
 
 @media only screen and (max-width: 768px) {
 
-    .nav-menu-button {
+    .burger {
         display: flex;
     }
 
@@ -171,6 +181,8 @@ nav .container {
         bottom: 0;
         left: 0;
         min-width: 320px;
+        height: 100vh;
+        background: #fff;
     }
 
     .nav-menu-reverse {
