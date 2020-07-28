@@ -59,7 +59,7 @@ nav {
           align-items: stretch;
   position: fixed;
   padding: 0 20px;
-  min-height: 64px;
+  min-height: 56px;
   background: #fff;
   z-index: 999;
 }
@@ -77,6 +77,10 @@ nav .container {
           align-items: center;
 }
 
+.nav-menu-reverse {
+  height: 100%;
+}
+
 .brand {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,7 +90,7 @@ nav .container {
       -ms-flex-align: center;
           align-items: center;
   margin-right: 20px;
-  min-height: 64px;
+  height: 100%;
 }
 
 .nav-link {
@@ -96,19 +100,22 @@ nav .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
+  height: 100%;
+  padding: 16px;
   font-size: 14px;
   line-height: 20px;
   color: #10141D;
+  background: rgba(16, 20, 29, 0);
   position: relative;
   font-weight: 600;
   list-style: none;
-  min-height: 64px;
   -webkit-box-sizing: border-box;
   /* Safari/Chrome, other WebKit */
   /* Firefox, other Gecko */
   box-sizing: border-box;
   /* Opera/IE 8+ */
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
 }
 
 .nav-link::after {
@@ -137,6 +144,7 @@ nav .container {
   display: flex;
   padding-left: 0;
   margin: 0;
+  height: 100%;
 }
 
 .nav-menu-container li {
@@ -153,7 +161,7 @@ nav .container {
   margin-right: 20px;
   height: 48px;
   width: 48px;
-  padding: 8px;
+  padding: 12px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -168,7 +176,7 @@ nav .container {
   height: 2px;
   background: #10141D;
   border-radius: 2px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   -webkit-transition: all 200ms;
   transition: all 200ms;
 }
@@ -204,7 +212,7 @@ nav .container {
         -ms-flex-direction: column;
             flex-direction: column;
     position: absolute;
-    top: 64px;
+    top: 56px;
     bottom: 0;
     left: 0;
     min-width: 320px;
@@ -219,6 +227,22 @@ nav .container {
   }
   .nav-link {
     padding: 16px 40px;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    background: rgba(16, 20, 29, 0.1);
+  }
+  .nav-link::after {
+    content: '';
+    display: none;
+  }
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
   }
 }
 
