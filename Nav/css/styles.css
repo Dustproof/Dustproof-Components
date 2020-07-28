@@ -138,7 +138,7 @@ nav .container {
   width: calc(100% - 40px);
 }
 
-.nav-menu-container {
+.nav-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,7 +147,7 @@ nav .container {
   height: 100%;
 }
 
-.nav-menu-container li {
+.nav-menu li {
   list-style: none;
 }
 
@@ -177,8 +177,8 @@ nav .container {
   background: #10141D;
   border-radius: 2px;
   margin-bottom: 4px;
-  -webkit-transition: all 200ms;
-  transition: all 200ms;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
 }
 
 .burger div:last-of-type {
@@ -205,8 +205,7 @@ nav .container {
     display: -ms-flexbox;
     display: flex;
   }
-  .nav-menu-container {
-    display: none;
+  .nav-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -215,9 +214,19 @@ nav .container {
     top: 56px;
     bottom: 0;
     left: 0;
-    min-width: 320px;
+    min-width: 50%;
     height: 100vh;
     background: #fff;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+  }
+  .nav-menu-active {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
   .nav-menu-reverse {
     -webkit-box-orient: horizontal;
@@ -235,14 +244,6 @@ nav .container {
   .nav-link::after {
     content: '';
     display: none;
-  }
-  .nav-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.6);
   }
 }
 

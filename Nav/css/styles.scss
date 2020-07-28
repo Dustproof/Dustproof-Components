@@ -126,14 +126,14 @@ nav .container {
     width: calc(100% - 40px);
 }
 
-.nav-menu-container {
+.nav-menu {
     display: flex;
     padding-left: 0;
     margin: 0;
     height: 100%;
 }
 
-.nav-menu-container li {
+.nav-menu li {
     list-style: none;
 }
 
@@ -156,7 +156,7 @@ nav .container {
     background: $color-primary;
     border-radius: 2px;
     margin-bottom: 4px;
-    transition: all 200ms;
+    transition: all 200ms ease;
 }
 
 .burger div:last-of-type {
@@ -180,16 +180,22 @@ nav .container {
         display: flex;
     }
 
-    .nav-menu-container {
-        display: none;
+    .nav-menu {
         flex-direction: column;
         position: absolute;
         top: 56px;
         bottom: 0;
         left: 0;
-        min-width: 320px;
+        min-width: 50%;
         height: 100vh;
         background: #fff;
+        transform: translateX(-100%);
+        transform-origin: left;
+        transition: all 400ms ease;
+    }
+
+    .nav-menu-active {
+        transform: translateX(0%);
     }
 
     .nav-menu-reverse {
@@ -208,15 +214,6 @@ nav .container {
     .nav-link::after {
         content: '';
         display: none;
-    }
-
-    .nav-overlay {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(0, 0, 0, .6);
     }
 
 }

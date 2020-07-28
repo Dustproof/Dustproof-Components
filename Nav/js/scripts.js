@@ -1,27 +1,10 @@
-var navMenu = document.getElementById('nav-menu-container');
+const navSlide = () => {
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-menu');
 
-function openNavMenu() {
-
-    if ( $('#nav-menu-container').css('display') == "flex") {
-        navMenu.style.display = "none";
-    }
-
-    else {
-        navMenu.style.display = "flex";
-    }
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-menu-active');
+    });
 }
 
-var showNavMenu = function() {
-
-    if (window.innerWidth > 768) {
-        navMenu.style.display = "flex";
-    }
-    
-    if (window.innerWidth < 768) {
-        navMenu.style.display = "none";
-    }
-
-};
-
-window.addEventListener("resize", showNavMenu);
-window.addEventListener("onload", showNavMenu);
+navSlide();
